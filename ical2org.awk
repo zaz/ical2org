@@ -97,7 +97,7 @@ BEGIN {
     trimdots = 1;
 
     # add clock reports for the duration of each calendar entry
-    add_clock_report = 1;
+    add_clock_report = 0;
 
     # change this to your name
     author = ENVIRON["AUTHOR"] != "" ? ENVIRON["AUTHOR"] : "Marc Sherry"
