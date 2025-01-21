@@ -96,6 +96,9 @@ BEGIN {
     # ... and value 0 doesn't touch them
     trimdots = 1;
 
+    # add clock reports for the duration of each calendar entry
+    add_clock_report = 1;
+
     # change this to your name
     author = ENVIRON["AUTHOR"] != "" ? ENVIRON["AUTHOR"] : "Marc Sherry"
 
@@ -436,7 +439,7 @@ BEGIN {
             print "  :ATTENDING: " attending_string
             print "  :ATTENDEES: " join_keys(people_attending)
             print "  :END:"
-            if (date2 != "")
+            if (add_clock_report && date2 != "")
             {
                 # Fake some logbook entries so we can generate a clock report
                 print "  :LOGBOOK:"
